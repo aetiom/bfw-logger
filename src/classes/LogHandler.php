@@ -139,8 +139,7 @@ class LogHandler {
         if ($this->options->rotate_interval > 0 && file_exists($this->logFile)) {
 
             // Get the rotation interval time
-            $rotInterval = $this->options->rotate_interval;
-            //$rotInterval = $this->options->rotate_interval * 86400;
+            $rotInterval = $this->options->rotate_interval * 86400;
             
             // Check if it is time to perfom a rotation
             if ($this->log_cTime + $rotInterval < time()) {
@@ -164,8 +163,7 @@ class LogHandler {
         if ($this->options->flush_interval > 0 && $files !== false && $files !== null) {
             
             // Get the flushing interval time
-            $flushInterval = $this->options->flush_interval;
-            //$flushInterval = $this->options->flush_interval * 86400;
+            $flushInterval = $this->options->flush_interval * 86400;
             
             foreach ($files as $file) {
                 // Check if it is time to perform a flush (add rootDir on local file path)
