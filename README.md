@@ -40,7 +40,6 @@ $ sh ./vendor/bin/bfw_loadModules
 ##Configuring BFW Advanced Log
 
 After a successfull install, you will find in "/configs/bfw-advanced-log" two files that will help you to configure BFW Advanced Log. 
-<<<<<<< HEAD
 <<<<<<< master
 - "configs.php" is used to configure options for the logger and the log handlers.
 - "channels" allow you to create an array of channels with : channel names as key (in string), and channel log handler options as value (in \BFWLog\logOptions).
@@ -48,10 +47,6 @@ After a successfull install, you will find in "/configs/bfw-advanced-log" two fi
 - "configs.php" is used to configure BFW Advanced Log options for the logger and the log handler (file handler in our case).
 - "channels" allow you to create array of channels with channel names as key and channel options as value.
 >>>>>>> update readme for 1.0
-=======
-- "configs.php" is used to configure BFW Advanced Log options for the logger and the log handler (file handler in our case).
-- "channels" allow you to create array of channels with channel names as key and channel options as value.
->>>>>>> 1.0
 
 This files are commented and full of multiple examples, so we will not go further for the moment.
 
@@ -75,15 +70,11 @@ Before sending message to the logger, you must set a channel. For doing so:
 $log->setChannel('ChannelName');
 ```
 
-<<<<<<< HEAD
 <<<<<<< master
 Because BFW Advanced Log implements PSR-3 standarts, you can call PSR-3 logger interface methods just like this:
 =======
 Because BFW Advanced Log implements PSR-3 standarts, you can call PSR-3 logger interface methods juste like this:
 >>>>>>> update readme for 1.0
-=======
-Because BFW Advanced Log implements PSR-3 standarts, you can call PSR-3 logger interface methods juste like this:
->>>>>>> 1.0
 ```php
 <?php
 
@@ -102,7 +93,6 @@ $log->setChannel('ChannelName');
 $log->log($PSR3_LogLevel, 'Message', $context);
 ```
 
-<<<<<<< HEAD
 <<<<<<< master
 You can also call BFW Advanced Log archiveLogFiles() method for processing log files archiving. We recommend you to call this method into a crontab php script for avoiding latency due to compression (if you have enabled it), and huge file rotation. This method purpose is to offer you a way to replace logrotate, in a very light and simple form, if you cannot access it on your actual hosting service.
 
@@ -112,11 +102,6 @@ You can also call BFW Advanced Log archiveLogFiles() method for helping you proc
 
 As you may have notice, you always have to set channel before using it. It's a bit different with archiveLogFiles() method. If you have not preset channels in configuration file, you will have to set ALL CHANNELS USED IN YOUR PROJECT that your want to archive before calling archiveLogFiles() method just like this:
 >>>>>>> update readme for 1.0
-=======
-You can also call BFW Advanced Log archiveLogFiles() method for helping you processing archiving log files. We recommend you to call this method into a crontab php script for avoiding latency due to compression (if you have enabled it), and huge file rotation. This method purpose is to offer you a way to replace logrotate, in a very light and simple form, if you cannot access it on your actual hosting service.
-
-As you may have notice, you always have to set channel before using it. It's a bit different with archiveLogFiles() method. If you have not preset channels in configuration file, you will have to set ALL CHANNELS USED IN YOUR PROJECT that your want to archive before calling archiveLogFiles() method just like this:
->>>>>>> 1.0
 ```php
 <?php
 
