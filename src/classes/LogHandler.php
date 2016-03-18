@@ -10,16 +10,6 @@
 namespace BFWLog;
 
 /**
- * Describes File Log Options
- */
-class LogOptions 
-{
-    public $rotate_interval         = 90;
-    public $flush_interval          = 395;
-    public $use_compression         = false;
-}
-
-/**
  * Class that manage log file
  * @package bfw-advanced-log
  */
