@@ -346,9 +346,14 @@ class Logger extends \Psr\Log\AbstractLogger {
      */
     private function getTimeLog() 
     {
+        // Create a new datetime with microseconds
         $date = \DateTime::createFromFormat('U.u', microtime(true));
-        $format = $this->options->timelog_format;
 
-        return $date->format($format);
+        // Get actual timezone and set it to $date
+        $TZ = new \DateTimeZone(date_default_timezone_get());
+        $date->setTimezone($TZ);
+        
+        // Return timelog in the format defined by the user
+        return $date->format($this->options->timelog_format);
     }
 }
