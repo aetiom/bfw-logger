@@ -8,19 +8,24 @@
  * @version 1.0
  */
 
+/* EXAMPLE
 
-$authOpt = new \BFWLog\ChannelOptions();
-$authOpt->rotate = false;
+// We create a new logOptions for our channel 'auth'
+$authOpt = new \BFWLog\logOptions();
+$authOpt->rotate_interval = 0;
 $authOpt->flush_interval = 180;
-$authOpt->timelog_format = '{JJ}-{MM}-{AA} {HH}:{MM}:{SS}';
 
+// We create a new logOptions for our channel 'routing'
+$routingOpt = new \BFWLog\logOptions();
+$routingOpt->use_compression = true;
 
+// We set our channels by creating an array with :
+// * Channel name in string as key
+// * Channel log options in logOptions as value
 $bfwLog_channels = array(
-    "auth" => $authOpt, 
-    "sendmail" => null
+    "auth" => $authOpt,
+    "sendmail" => null,
+    "routing" => $routingOpt
 );
 
-$bfwLog_channels = array(
-    "auth" => null, 
-    "sendmail" => null
-);
+*/
