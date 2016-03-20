@@ -168,12 +168,12 @@ class Logger extends \Psr\Log\AbstractLogger {
         
         // If we are in logger mode ALL_LOG_UNITED, get contents from the global log handler, 
         if ($this->options->logger_mode === LoggerMode::ALL_LOGS_UNITED) {
-            $contents = $this->global_logHandler->getRecords($logName, $logLevel = null);
+            $contents = $this->global_logHandler->getRecords();
         }
         
         // Else if the current channel log handler is set, get contents from the channel log handler
         elseif ($this->currentChannel_logHandler !== null) {
-            $contents = $this->currentChannel_logHandler->getRecords($logName, $logLevel = null);
+            $contents = $this->currentChannel_logHandler->getRecords();
         }
         
         if ($contents !== false) { return end($contents); }
