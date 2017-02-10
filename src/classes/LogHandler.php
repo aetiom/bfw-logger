@@ -3,7 +3,7 @@
 /**
  * Classes permettant de gérer la journalisation
  * @author Alexandre Moittié <contact@alexandre-moittie.com>
- * @package bfw-advanced-log
+ * @package bfw-logger
  * @version 1.0
  */
 
@@ -11,7 +11,7 @@ namespace BFWLog;
 
 /**
  * Class that manage log file
- * @package bfw-advanced-log
+ * @package bfw-logger
  */
 class LogHandler {
     

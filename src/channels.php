@@ -1,10 +1,10 @@
 <?php
 /**
- * Fichier de configuration du module bfw-advanced-log
+ * Fichier de configuration du module bfw-logger
  * Liste des cannaux disponibles par default
  * 
  * @author Alexandre Moittié <contact@alexandre-moittie.com>
- * @package bfw-advanced-log
+ * @package bfw-logger
  * @version 1.0
  */
 

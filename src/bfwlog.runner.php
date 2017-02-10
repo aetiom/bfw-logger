@@ -2,12 +2,12 @@
 /**
  * Actions à effectuer lors de l'initialisation du module par le framework.
  * @author Alexandre Moittié <contact@alexandre-moittie.com>
- * @package bfw-advanced-log
+ * @package bfw-logger
  * @version 1.0
  */
 
-require_once($rootPath.'configs/bfw-advanced-log/config.php');
-require_once($rootPath.'configs/bfw-advanced-log/channels.php');
+require_once($rootPath.'configs/bfw-logger/config.php');
+require_once($rootPath.'configs/bfw-logger/channels.php');
 
 if (!isset($bfwLog_channels) || $bfwLog_channels === null) {
     $bfwLog_channels = array();

@@ -1,5 +1,5 @@
 {
-    "name": "bfw-advanced-log",
+    "name": "bfw-logger",
     "params": {
         "runFile": "bfwlog.runner.php"
     }

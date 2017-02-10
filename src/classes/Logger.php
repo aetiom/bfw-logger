@@ -3,7 +3,7 @@
 /**
  * Classes permettant de gérer la journalisation
  * @author Alexandre Moittié <contact@alexandre-moittie.com>
- * @package bfw-advanced-log
+ * @package bfw-logger
  * @version 1.0
  */
 
@@ -12,7 +12,7 @@ use \Exception;
 
 /**
  * Class that manage the logs
- * @package bfw-advanced-log
+ * @package bfw-logger
  */
 class Logger extends \Psr\Log\AbstractLogger {
     
