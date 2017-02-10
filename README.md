@@ -1,7 +1,7 @@
 #BFW Logger
 Advanced log module for BFW framework
 
-BFW Advanced log manage your log records by sending its into log files and allow you to rotate, compress and flush your logs (all fully configurable).
+BFW Logger manage your log records by sending its into log files and allow you to rotate, compress and flush your logs (all fully configurable).
 This module implements the PSR-3 interface and default classes, so you can use PSR-3 log levels and PSR-3 logger interface methods. 
 
 ##Before installing
