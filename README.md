@@ -41,7 +41,7 @@ $ /vendor/bin/bfw_installModules
 
 After a successfull install, you will find in "app/configs/bfw-logger" the configs.php file that is used to configure options for the logger and the log handlers and allows you to create your defaults channels
 
-This files are commented and full of multiple examples, so we will not go further for the moment.
+This file is commented and full of multiple examples, so we will not go further for the moment.
 
 
 ---
