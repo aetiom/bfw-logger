@@ -1,18 +1,13 @@
 <?php
 
-/**
- * Classes permettant de gérer la journalisation
- * @author Alexandre Moittié <contact@alexandre-moittie.com>
- * @package bfw-logger
- * @version 1.0
- */
-
-namespace BFWLog;
+namespace BfwLogger;
 use \Exception;
 
 /**
- * Class that manage the logs
- * @package bfw-logger
+ * Class that manages logger and logging for BFW Framework
+ * @author Alexandre Moittié <contact@alexandre-moittie.com>
+ * @package bfw-advanced-log
+ * @version 2.0
  */
 class Logger extends \Psr\Log\AbstractLogger {
     
@@ -31,19 +26,19 @@ class Logger extends \Psr\Log\AbstractLogger {
     protected $rootDir;
         
     /**
-     * @var BFWLog\LogHandler $channel_logHandlers 
+     * @var BfwLogger\LogHandler $channel_logHandlers 
      * Array containing all channels log handlers
      */
     protected $channel_logHandlers = array();
     
     /**
-     * @var BFWLog\LogHandler $currentChannel_logHandler
+     * @var BfwLogger\LogHandler $currentChannel_logHandler
      * Current channel log handler
      */    
     protected $currentChannel_logHandler;
     
     /**
-     * @var BFWLog\LogHandler $global_logHandler
+     * @var BfwLogger\LogHandler $global_logHandler
      * Global/main log handler
      */
     protected $global_logHandler;
@@ -55,13 +50,13 @@ class Logger extends \Psr\Log\AbstractLogger {
     protected $currentChannel_name;
     
     /**
-     * @var BFWLog\LoggerOptions $options
+     * @var BfwLogger\LoggerOptions $options
      * Options for this logger
      */
     protected $options;
     
     /**
-     * @var BFWLog\LogOptions $logOptions_defaults
+     * @var BfwLogger\LogOptions $logOptions_defaults
      * Defaults log options for channels log handlers
      */
     protected $logOptions_defaults;
@@ -70,21 +65,23 @@ class Logger extends \Psr\Log\AbstractLogger {
     /**
      * Construtor
      * 
-     * @param string                 $log_rootDir    : path to root directory
-     * @param \BFWLog\LoggerOptions  $loggerOptions  : log options for this logger
-     * @param \BFWLog\LogOptions     $logOptions : default channel options for channels log handlers
-     * @param array                  $channels       : preconfigured channels names and options array((string)$name => (BFWLog\LogOptions)$options)
+     * @param \BfwLogger\LoggerOptions  $loggerOptions  : log options for this logger
+     * @param \BfwLogger\LogOptions     $logOptions : default channel options for channels log handlers
+     * @param array                  $channels       : preconfigured channels names and options array((string)$name => (BfwLogger\LogOptions)$options)
      */
-    public function __construct($log_rootDir, LoggerOptions $loggerOptions, LogOptions $logOptions, array $channels = array()) 
+    public function __construct(\BFW\Config $config) 
     {
         // Init. vars and options
-        $this->rootDir = (string)$log_rootDir;
-        $this->options = $loggerOptions;
-        $this->options_defaults = $logOptions;
-        
-        // Get directory or create it if it doesn't exist
-        $rootDir = $this->getDir($this->rootDir); 
+        $this->rootDir = ROOT_DIR.'/app/logs/';
+        $this->options = $config->getConfig('loggerConfig');
+        $this->options_defaults = $config->getConfig('logConfig');
+        $channels = $config->getConfig('channels');
 
+        // If we are in debugmode, we set all our record level trigger to debug log level
+        if (\BFW\Application::getInstance()->getConfig('debug') === true) {
+            $this->options->record_lvl_trigger = \BfwLogger\LogLevel::DEBUG;
+        }
+        
         // Configure channels, if our logger mode have a partitionned log
         if (LoggerMode::hasPartitionedLog($this->options->logger_mode)) {
             
@@ -199,7 +196,7 @@ class Logger extends \Psr\Log\AbstractLogger {
     /**
      * Create and format a log record
      * 
-     * @param \BFWLog\LogLevel $level           : level
+     * @param \BfwLogger\LogLevel $level           : level
      * @param string           $message         : text message with some {placeholders}
      * @param array            $context         : context values to interpolate with
      * @param boolean          $channel_display : set to true to force the channel display 
@@ -271,7 +268,7 @@ class Logger extends \Psr\Log\AbstractLogger {
      * Create new channel, and add a log handler to it
      * 
      * @param string                 $channelName    : channel name
-     * @param \BFWLog\LogOptions $logOptions : channel options
+     * @param \BfwLogger\LogOptions $logOptions : channel options
      */
     private function addChannel($channelName, LogOptions $logOptions = null) 
     {

@@ -1,9 +1,9 @@
 {
-	"name": "dremecker/bfw-logger",
+	"name": "dremecker/bfw-advanced-log",
 	"type": "library",
 	"description": "Advanced log module for BFW framework",
 	"keywords": ["log", "module", "bfw"],
-	"homepage": "https://github.com/dremecker/bfw-logger",
+	"homepage": "https://github.com/dremecker/bfw-advanced-log",
 	"time": "2016-03-05",
 	"license": "The MIT License (MIT)",
 	"authors":
@@ -17,13 +17,13 @@
 	"support":
 	{
 		"email": "contact@alexandre-moittie.com",
-		"issues": "https://github.com/dremecker/bfw-logger/issues",
-		"source": "https://github.com/dremecker/bfw-logger"
+		"issues": "https://github.com/dremecker/bfw-advanced-log/issues",
+		"source": "https://github.com/dremecker/bfw-advanced-log"
 	},
 	"require":
 	{
-		"php": ">=5.3.0",
-                "bulton-fr/bfw": "~2.2",
+		"php": ">=5.6.0",
+                "bulton-fr/bfw": "3.0.x-dev",
                 "psr/log": "dev-master"
 	},
 	"minimum-stability": "stable",
@@ -31,7 +31,7 @@
 	{
 		"psr-4":
 		{
-			"BFWLog\\": "src/classes/"
+			"BfwLogger\\": "src/classes/"
 		}
 	}
 }

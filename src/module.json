@@ -1,6 +1,3 @@
 {
-    "name": "bfw-logger",
-    "params": {
-        "runFile": "bfwlog.runner.php"
-    }
+    "runner": "runner.php"
 }

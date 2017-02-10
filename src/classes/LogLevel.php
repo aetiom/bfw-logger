@@ -1,18 +1,12 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-namespace BFWLog;
-
+namespace BfwLogger;
 
 /**
- * Description of LogLevel
- *
- * @author Dremecker
+ * Class that manage log levels
+ * @author Alexandre Moittié <contact@alexandre-moittie.com>
+ * @package bfw-advanced-log
+ * @version 2.0
  */
 class LogLevel Extends \Psr\Log\LogLevel {
     
@@ -50,7 +44,7 @@ class LogLevel Extends \Psr\Log\LogLevel {
     /**
      * Returns integer priority for log level
      * 
-     * @param \BFWLog\LogLevel $level : level
+     * @param \BfwLogger\LogLevel $level : level
      * @return int : integer priority for the level
      */
     public static function getPos($level) {
@@ -60,7 +54,7 @@ class LogLevel Extends \Psr\Log\LogLevel {
     /**
      * Returns string tag for log level
      * 
-     * @param \BFWLog\LogLevel $level : level
+     * @param \BfwLogger\LogLevel $level : level
      * @return string : string tag for the level
      */
     public static function getTag($level) {
@@ -70,8 +64,8 @@ class LogLevel Extends \Psr\Log\LogLevel {
     /**
      * Compare two levels between them and return the level priority difference in integer
      * 
-     * @param \BFWLog\LogLevel $level0 : first level to compare
-     * @param \BFWLog\LogLevel $level1 : second level to compare to
+     * @param \BfwLogger\LogLevel $level0 : first level to compare
+     * @param \BfwLogger\LogLevel $level1 : second level to compare to
      * @return int : level priority difference in integer between the two levels. 
      * <0 if ref level have higher priority than compared level, 
      * >0 if ref level have lower priority than compared level and 

@@ -1,17 +1,12 @@
 <?php
 
-/**
- * Classes permettant de gérer la journalisation
- * @author Alexandre Moittié <contact@alexandre-moittie.com>
- * @package bfw-logger
- * @version 1.0
- */
-
-namespace BFWLog;
+namespace BfwLogger;
 
 /**
  * Class that manage log file
- * @package bfw-logger
+ * @author Alexandre Moittié <contact@alexandre-moittie.com>
+ * @package bfw-advanced-log
+ * @version 2.0
  */
 class LogHandler {
     
@@ -46,7 +41,7 @@ class LogHandler {
     protected $log_cTime;
     
     /**
-     * @var \BFWLog\ChannelOptions $options 
+     * @var \BfwLogger\ChannelOptions $options 
      * Channel options
      */
     protected $options;
@@ -56,7 +51,7 @@ class LogHandler {
      * Constructor
      * 
      * @param string             $logFile : full path to the log file
-     * @param \BFWLog\LogOptions $options : channle options for this handler
+     * @param \BfwLogger\LogOptions $options : channle options for this handler
      */
     public function __construct($logFile, LogOptions $options)
     {

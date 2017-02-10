@@ -1,15 +1,12 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-namespace BFWLog;
+namespace BfwLogger;
 
 /**
- * Describes Logger Mode
+ * Class that handles logger modes
+ * @author Alexandre Moittié <contact@alexandre-moittie.com>
+ * @package bfw-advanced-log
+ * @version 2.0
  */
 class LoggerMode {
     const ALL_LOGS_UNITED    = 0;

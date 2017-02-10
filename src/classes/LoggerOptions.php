@@ -1,16 +1,12 @@
 <?php
 
+namespace BfwLogger;
+
 /**
- * Classes permettant de gérer la journalisation
+ * Class that handles logger options
  * @author Alexandre Moittié <contact@alexandre-moittie.com>
- * @package bfw-logger
- * @version 1.0
- */
-
-namespace BFWLog;
-
-/**
- * Describes Logger Options
+ * @package bfw-advanced-log
+ * @version 2.0
  */
 class LoggerOptions
 {
