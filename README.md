@@ -33,7 +33,7 @@ $ php composer.phar install
 
 And launch BFW module loading :
 ```bash
-$ sh ./vendor/bin/bfw_installModules
+$ /vendor/bin/bfw_installModules
 ```
 
 
