@@ -5,7 +5,7 @@
 	"keywords": ["log", "module", "bfw"],
 	"homepage": "https://github.com/dremecker/bfw-advanced-log",
 	"time": "2016-03-05",
-	"license": "The MIT License (MIT)",
+	"license": "LGPL-3.0",
 	"authors":
 	[
 		{
