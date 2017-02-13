@@ -5,7 +5,7 @@ namespace BfwLogger;
 /**
  * Class that manage log file
  * @author Alexandre Moittié <contact@alexandre-moittie.com>
- * @package bfw-advanced-log
+ * @package bfw-logger
  * @version 2.0
  */
 class LogHandler {

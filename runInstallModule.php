@@ -2,17 +2,17 @@
 /**
  * Install script for the module
  * @author Alexandre Moittié <contact@alexandre-moittie.com>
- * @package bfw-advanced-log
+ * @package bfw-logger
  * @version 2.0
  */
 
 echo "\n".'     > Create log directory into /app/logs/';
 
 // If dir doesn't exists AND mkdir fails, we throws an exeption
-if (!file_exists(BFW_PATH.'/app/logs/')) {
+if (!file_exists(APP_DIR.'/logs/')) {
     
     // Create our directory with 755 acls
-    if(mkdir (BFW_PATH.'/app/logs/', 0755, true)) {
+    if(mkdir (APP_DIR.'/logs/', 0755, true)) {
         echo "...\033[1;32m Done";
     }
 
