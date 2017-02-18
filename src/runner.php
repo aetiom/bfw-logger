@@ -9,4 +9,4 @@
 $config = $module->getConfig();
 
 // Instanciate our log class
-$module->log = new \BfwLogger\Logger($config);
+$module->logger = new \BfwLogger\Logger($config);
