@@ -31,7 +31,8 @@ else {
     echo "...\033[1;33m Already exist.";
 }
 
-echo "\n".'     > Copy script '."\033[0;36m".$archive_logs_script."\033[0m into /src/cli/";
+echo "\033[0m\n";
+echo '     > Copy script '."\033[0;36m".$archive_logs_script."\033[0m into /src/cli/";
 
 // We check that our destination file does not exist
 if(!file_exists(CLI_DIR.$archive_logs_script)) {
