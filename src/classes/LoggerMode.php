@@ -14,7 +14,7 @@ class LoggerMode {
     const ERRORS_UNITED_ONLY = 2;
 
     
-    public static function hasUnitedLog ($mode) 
+    public static function has_unitedLog ($mode) 
     {
         if ($mode !== self::PARTITIONED_LOGS) {
             return true;
@@ -23,7 +23,7 @@ class LoggerMode {
         return false;
     }
     
-    public static function hasPartitionedLog ($mode) 
+    public static function has_partitionedLog ($mode) 
     {
         if ($mode !== self::ALL_LOGS_UNITED) {
             return true;

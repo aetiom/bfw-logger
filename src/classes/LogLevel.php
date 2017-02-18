@@ -42,22 +42,12 @@ class LogLevel Extends \Psr\Log\LogLevel {
     );
     
     /**
-     * Returns integer priority for log level
-     * 
-     * @param \BfwLogger\LogLevel $level : level
-     * @return int : integer priority for the level
-     */
-    public static function getPos($level) {
-        return self::$levelPos[$level];
-    }
-    
-    /**
      * Returns string tag for log level
      * 
      * @param \BfwLogger\LogLevel $level : level
      * @return string : string tag for the level
      */
-    public static function getTag($level) {
+    public static function get_tag($level) {
         return self::$levelTag[$level];
     }
     

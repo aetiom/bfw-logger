@@ -84,7 +84,7 @@ class LogHandler {
      * @param string   $logRecord : record to add to the log file
      * @throws Exception : if we can't write log file
      */
-    public function addRecord($logRecord) 
+    public function add_record($logRecord) 
     {
         // if we can't write log file throw an exception
         if(!file_put_contents($this->logFile, rtrim($logRecord)."\n", FILE_APPEND)) {
@@ -102,7 +102,7 @@ class LogHandler {
      * 
      * @return mixed : array of records, or false if errors
      */
-    public function getRecords() 
+    public function get_records() 
     {
         if(file_exists($this->logFile)) { 
             return file($this->logFile); 
@@ -141,7 +141,7 @@ class LogHandler {
         }
         
         // Get all archived files and their local path
-        $files = $this->searchArchives();
+        $files = $this->search_archives();
         
         // Check if flush is activated on this log handler and
         // if files is not null or false
@@ -248,7 +248,7 @@ class LogHandler {
      * 
      * @return mixed : array of files found or false if there is no file
      */
-    private function searchArchives() 
+    private function search_archives() 
     {
         $files = scandir($this->rootDir);
         
