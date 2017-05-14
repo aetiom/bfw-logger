@@ -6,7 +6,7 @@
  * @version 2.0
  */
 
-$config = $module->getConfig();
+$config = $this->getConfig();
 
 // Instanciate our log class
-$module->logger = new \BfwLogger\Logger($config);
+$this->logger = new \BfwLogger\Logger($config);

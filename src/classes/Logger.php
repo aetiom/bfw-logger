@@ -67,17 +67,17 @@ class Logger extends \Psr\Log\AbstractLogger {
     {
         // Init. vars and options
         $this->rootDir = ROOT_DIR.'/app/logs/';
-        $this->options = $config->getConfig('loggerConfig');
-        $this->options_defaults = $config->getConfig('logConfig');
+        $this->options = $config->getValue('loggerConfig');
+        $this->options_defaults = $config->getValue('logConfig');
 
         // If we are in debugmode, we set all our record level trigger to debug log level
-        if (\BFW\Application::getInstance()->getConfig('debug') === true) {
+        if (\BFW\Application::getInstance()->getValue('debug') === true) {
             $this->options->record_lvl_trigger = \BfwLogger\LogLevel::DEBUG;
         }
         
         // Configure channels, if our logger mode have a partitionned log
         if (LoggerMode::has_partitionedLog($this->options->logger_mode)) {
-            $channels = $config->getConfig('channels');
+            $channels = $config->getValue('channels');
             
             // If preconfigured channels is set, add channel one by oue
             if ($channels !== null && count($channels)!=0) {
