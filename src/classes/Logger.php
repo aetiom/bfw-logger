@@ -71,7 +71,7 @@ class Logger extends \Psr\Log\AbstractLogger {
         $this->options_defaults = $config->getValue('logConfig');
 
         // If we are in debugmode, we set all our record level trigger to debug log level
-        if (\BFW\Application::getInstance()->getValue('debug') === true) {
+        if (\BFW\Application::getInstance()->getConfig()->getValue('debug') === true) {
             $this->options->record_lvl_trigger = \BfwLogger\LogLevel::DEBUG;
         }
         
